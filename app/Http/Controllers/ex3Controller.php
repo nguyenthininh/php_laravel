@@ -18,7 +18,25 @@ class ex3Controller extends Controller
                 "mark" =>9
             ],
             [
-                "id" => 1,
+                "id" => 2,
+                "name" => "Nguyen Van A",
+                "email" => "nvb@gmail.com",
+                "phonenumber" =>"09876543",
+                "hometown" => "HA NOI",
+                "date" =>"5/6/2000",
+                "mark" =>9
+            ],
+            [
+                "id" => 3,
+                "name" => "Nguyen Van C",
+                "email" => "nvc2000@gmail.com",
+                "phonenumber" =>"09876543",
+                "hometown" => "HA NOI",
+                "date" =>"20/9/2000",
+                "mark" =>9
+            ],
+            [
+                "id" => 4,
                 "name" => "Nguyen Van A",
                 "email" => "ntninh2000@gmail.com",
                 "phonenumber" =>"09876543",
@@ -27,25 +45,7 @@ class ex3Controller extends Controller
                 "mark" =>9
             ],
             [
-                "id" => 1,
-                "name" => "Nguyen Van A",
-                "email" => "ntninh2000@gmail.com",
-                "phonenumber" =>"09876543",
-                "hometown" => "HA NOI",
-                "date" =>"20/9/2000",
-                "mark" =>9
-            ],
-            [
-                "id" => 1,
-                "name" => "Nguyen Van A",
-                "email" => "ntninh2000@gmail.com",
-                "phonenumber" =>"09876543",
-                "hometown" => "HA NOI",
-                "date" =>"20/9/2000",
-                "mark" =>9
-            ],
-            [
-                "id" => 1,
+                "id" => 5,
                 "name" => "Nguyen Van A",
                 "email" => "ntninh2000@gmail.com",
                 "phonenumber" =>"09876543",
