@@ -23,42 +23,42 @@
 
 
                 <div class="form-group ">
-                    <label for="exampleInputEmail1">Email address</label>
+                    <label for="exampleInputEmail1"><b>Email address</b></label>
                     <!-- <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email"> -->
                     <input type="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Vui lòng nhập email" required>
 
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputName1">Họ và Tên</label>
+                    <label for="exampleInputName1"><b>Họ và Tên</b>/label>
                     <!-- <input type="text" name="ten" class="form-control" id="exampleInputName1" placeholder="Họ và Tên"> -->
                     <input type="text" class="form-control" id="inputName" placeholder="Họ và Tên" data-error="Vui lòng nhập tên" required>
 
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputPhone1">Số điện thoại</label>
+                    <label for="exampleInputPhone1"><b>Số điện thoại</b></label>
                     <!-- <input type="number" name="phone"class="form-control" id="exampleInputPhone1" placeholder="Số điện thoại"> -->
                     <input type="number" class="form-control" id="inputPhone" placeholder="Số điện thoại" data-error="Vui lòng nhập số điện thoại" required>
 
                 </div>
 
                 <div class="form-group ">
-                    <label for="exampleInputDate1">Date of birth</label>
+                    <label for="exampleInputDate1"><b>Date of birth</b></label>
                     <!-- <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email"> -->
                     <input type="numbem" class="form-control" id="inputDate" placeholder="Date of birth" required>
 
                 </div>
 
                 <div class="form-group ">
-                    <label for="exampleInputHometown">Hometown</label>
+                    <label for="exampleInputHometown"><b>Hometown</b></label>
                     <!-- <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email"> -->
                     <input type="text" class="form-control" id="inputHometown" placeholder="Hometown" required>
 
                 </div>
 
                 <div class="form-group ">
-                    <label for="exampleInputMark">Mark student</label>
+                    <label for="exampleInputMark"><b>Mark student</b></label>
                     <!-- <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email"> -->
                     <input type="number" class="form-control" id="inputMark" placeholder="Mark" required>
 
