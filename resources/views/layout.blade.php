@@ -1,74 +1,189 @@
 <!doctype html>
 <html lang="zxx">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>aranoz</title>
-    <link rel="icon" href="img/favicon.png">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <!-- nice select CSS -->
-    <link rel="stylesheet" href="css/nice-select.css">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="css/all.css">
-    <!-- flaticon CSS -->
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <!-- swiper CSS -->
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/price_rangs.css">
-    <!-- style CSS -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
+@includeIf('html/head')
 
 <body>
 <!--::header part start::-->
-<header class="main_menu home_menu">
-    <div class="container">
-        @yield("content1")
-    </div>
-</header>
+@includeIf('html/header')
 <!-- Header part end-->
 
-<!--================Home Banner Area =================-->
-<!-- breadcrumb start-->
-<section class="breadcrumb breadcrumb_bg">
-    <div class="container">
-        @yield('content2')
-    </div>
-</section>
-<!-- breadcrumb start-->
+<!-- banner part start-->
+@includeIf('html/banner')
+<!-- banner part start-->
 
-<!--================Category Product Area =================-->
-<section class="cat_product_area section_padding">
+<!-- feature_part start-->
+<section class="feature_part padding_top">
     <div class="container">
-        @yield('content3')
+        @yield('product')
     </div>
 </section>
-<!--================End Category Product Area =================-->
+<!-- upcoming_event part start-->
+
+<!-- product_list start-->
+<section class="product_list section_padding">
+    <div class="container">
+        @yield('detail')
+    </div>
+</section>
+<!-- product_list part start-->
+
+<!-- awesome_shop start-->
+<section class="our_offer section_padding">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-lg-6 col-md-6">
+                <div class="offer_img">
+                    <img src="img/offer_img.png" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="offer_text">
+                    <h2>Weekly Sale on
+                        60% Off All Products</h2>
+                    <div class="date_countdown">
+                        <div id="timer">
+                            <div id="days" class="date"></div>
+                            <div id="hours" class="date"></div>
+                            <div id="minutes" class="date"></div>
+                            <div id="seconds" class="date"></div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="enter email address"
+                               aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <a href="#" class="input-group-text btn_2" id="basic-addon2">book now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- awesome_shop part start-->
 
 <!-- product_list part start-->
-<section class="product_list best_seller">
+<section class="product_list best_seller section_padding">
     <div class="container">
-        @yield("content4")
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="section_tittle text-center">
+                    <h2>Best Sellers <span>shop</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-lg-12">
+                <div class="best_product_slider owl-carousel">
+                    <div class="single_product_item">
+                        <img src="img/product/product_1.png" alt="">
+                        <div class="single_product_text">
+                            <h4>Quartz Belt Watch</h4>
+                            <h3>$150.00</h3>
+                        </div>
+                    </div>
+                    <div class="single_product_item">
+                        <img src="img/product/product_2.png" alt="">
+                        <div class="single_product_text">
+                            <h4>Quartz Belt Watch</h4>
+                            <h3>$150.00</h3>
+                        </div>
+                    </div>
+                    <div class="single_product_item">
+                        <img src="img/product/product_3.png" alt="">
+                        <div class="single_product_text">
+                            <h4>Quartz Belt Watch</h4>
+                            <h3>$150.00</h3>
+                        </div>
+                    </div>
+                    <div class="single_product_item">
+                        <img src="img/product/product_4.png" alt="">
+                        <div class="single_product_text">
+                            <h4>Quartz Belt Watch</h4>
+                            <h3>$150.00</h3>
+                        </div>
+                    </div>
+                    <div class="single_product_item">
+                        <img src="img/product/product_5.png" alt="">
+                        <div class="single_product_text">
+                            <h4>Quartz Belt Watch</h4>
+                            <h3>$150.00</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <!-- product_list part end-->
 
-<!--::footer_part start::-->
-<footer class="footer_part">
+<!-- subscribe_area part start-->
+<section class="subscribe_area section_padding">
     <div class="container">
-        @yield('footer')
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="subscribe_area_text text-center">
+                    <h5>Join Our Newsletter</h5>
+                    <h2>Subscribe to get Updated
+                        with new offers</h2>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="enter email address"
+                               aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <a href="#" class="input-group-text btn_2" id="basic-addon2">subscribe now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</footer>
+</section>
+<!--::subscribe_area part end::-->
+
+<!-- subscribe_area part start-->
+<section class="client_logo padding_top">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="single_client_logo">
+                    <img src="img/client_logo/client_logo_1.png" alt="">
+                </div>
+                <div class="single_client_logo">
+                    <img src="img/client_logo/client_logo_2.png" alt="">
+                </div>
+                <div class="single_client_logo">
+                    <img src="img/client_logo/client_logo_3.png" alt="">
+                </div>
+                <div class="single_client_logo">
+                    <img src="img/client_logo/client_logo_4.png" alt="">
+                </div>
+                <div class="single_client_logo">
+                    <img src="img/client_logo/client_logo_5.png" alt="">
+                </div>
+                <div class="single_client_logo">
+                    <img src="img/client_logo/client_logo_3.png" alt="">
+                </div>
+                <div class="single_client_logo">
+                    <img src="img/client_logo/client_logo_1.png" alt="">
+                </div>
+                <div class="single_client_logo">
+                    <img src="img/client_logo/client_logo_2.png" alt="">
+                </div>
+                <div class="single_client_logo">
+                    <img src="img/client_logo/client_logo_3.png" alt="">
+                </div>
+                <div class="single_client_logo">
+                    <img src="img/client_logo/client_logo_4.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--::subscribe_area part end::-->
+
+<!--::footer_part start::-->
+@includeIf('html/footer')
 <!--::footer_part end::-->
 
 <!-- jquery plugins here-->
@@ -95,8 +210,6 @@
 <script src="js/jquery.form.js"></script>
 <script src="js/jquery.validate.min.js"></script>
 <script src="js/mail-script.js"></script>
-<script src="js/stellar.js"></script>
-<script src="js/price_rangs.js"></script>
 <!-- custom js -->
 <script src="js/custom.js"></script>
 </body>
