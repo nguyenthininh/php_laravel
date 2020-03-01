@@ -13,11 +13,8 @@
 <!-- banner part start-->
 
 <!-- feature_part start-->
-<section class="feature_part padding_top">
-    <div class="container">
-        @yield('product')
-    </div>
-</section>
+
+@yield('product')
 <!-- upcoming_event part start-->
 
 <!-- product_list start-->
