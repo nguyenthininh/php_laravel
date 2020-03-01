@@ -16,7 +16,7 @@
                     <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.html">Home</a>
+                                <a class="nav-link" href="{{url('/shop')}}">Home</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
@@ -24,8 +24,8 @@
                                     Shop
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                    <a class="dropdown-item" href="list_product.html"> shop category</a>
-                                    <a class="dropdown-item" href="product_detail.html">product details</a>
+                                    <a class="dropdown-item" href="{{url('/list')}}"> shop category</a>
+                                    <a class="dropdown-item" href="{{url('/detail')}}">product details</a>
 
                                 </div>
                             </li>
