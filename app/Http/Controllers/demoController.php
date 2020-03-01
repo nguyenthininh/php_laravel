@@ -11,7 +11,7 @@ class demoController extends Controller
     }
 
     public function listPage(){
-        return view ('list product');
+        return view ('list_product');
     }
 
     public function detailPage(){
