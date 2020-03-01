@@ -9,7 +9,7 @@
 <!-- Header part end-->
 
 <!-- banner part start-->
-<section class="banner_part">
+<section class="breadcrumb breadcrumb_bg">
     <div class="container">
         @yield('home')
     </div>
