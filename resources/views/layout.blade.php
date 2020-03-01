@@ -1,15 +1,20 @@
 <!doctype html>
 <html lang="zxx">
 
-@includeIf('html/head')
+@includeIf('html.head')
 
 <body>
 <!--::header part start::-->
-@includeIf('html/header')
+@includeIf('html.header')
 <!-- Header part end-->
 
 <!-- banner part start-->
-@includeIf('html/banner')
+<section class="banner_part">
+    <div class="container">
+        @yield('home')
+    </div>
+</section>
+
 <!-- banner part start-->
 
 <!-- feature_part start-->
@@ -184,7 +189,7 @@
 <!--::subscribe_area part end::-->
 
 <!--::footer_part start::-->
-@includeIf('html/footer')
+@includeIf('html.footer')
 <!--::footer_part end::-->
 
 <!-- jquery plugins here-->
