@@ -15,7 +15,8 @@ class demoController extends Controller
     }
 
     public function listPage(){
-        $products = Product::find(1);
+//        $products = Product::find(1);
+        $products = Product::take(4)->orderBy('product_name','asc')->get();
         $category_products = Product::where("category_id",$products->category_id)->where('id',"!=",$products->id)->take(10)->get();
         $brand_products = Product::where("brand_id",$products->brand_id)->where('id',"!=",$products->id)->take(10)->get();
 
