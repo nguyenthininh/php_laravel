@@ -34,7 +34,7 @@ Route::get("/add-student",function (){
     return view('form_add_student');
 });
 
-Route::get("/shop","demoController@homePage");
+Route::get("/home","demoController@homePage");
 Route::get("/list","demoController@listPage");
 Route::get("/detail","demoController@detailPage");
 

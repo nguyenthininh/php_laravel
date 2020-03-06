@@ -42,12 +42,12 @@ $factory-> define(\App\Product::class, function (Faker $faker){
     return [
         'product_name' => $faker->unique()->name,
         'product_desc' => $faker->title,
-        'thumbnail' => 'img/product/'.random_int(1,12).'.jpg',
-        'gallery' => 'img/product/'.random_int(1,12).'.jpg'.",".'img/product/'.random_int(1,12).'.jpg',
+        'thumbnail' => 'img/product/product_'.random_int(1,8).'.png',
+        'gallery' => 'img/product/product_'.random_int(1,8).'.png'.",".'img/product/product_'.random_int(1,8).'.png',
         'price' => random_int(1,1000),
         'quantity' => random_int(1,100),
-        'category_id' =>random_int(1,100), //vi vua chay random 100 category
-        'brand_id' => random_int(1,100)
+        'category_id' =>random_int(1,3), //vi vua chay random 100 category
+        'brand_id' => random_int(1,5)
 
     ];
 });
