@@ -9,7 +9,7 @@
                     <div class="product_slider_img">
                         <div id="vertical">
                             <div data-thumb="img/product/single-product/product_1.png">
-                                <img src="img/product/single-product/product_1.png" />
+                                <img src="{{asset("$products->thumbnail")}}" />
                             </div>
                             {{--                    <div data-thumb="img/product/single-product/product_1.png">--}}
                             {{--                        <img src="img/product/single-product/product_1.png" />--}}
@@ -26,8 +26,8 @@
                 <div class="col-lg-5 col-xl-4">
                     <div class="s_product_text">
                         <h5>previous <span>|</span> next</h5>
-                        <h3>Faded SkyBlu Denim Jeans</h3>
-                        <h2>$149.99</h2>
+                        <h3>{{$products->product_name}}</h3>
+                        <h2>{{$products->price}}</h2>
                         <ul class="list">
                             <li>
                                 <a class="active" href="#">

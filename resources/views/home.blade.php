@@ -20,20 +20,20 @@
     </section>
 
 
-        @foreach ($products as $p)
-            <div class="col-lg-4 col-sm-6">
-                <div class="single_product_item">
-                    <img src="{{ $p->thumbnail }}" alt="">
-                                            <img src="img/product/product_1.png" alt="">
-                    <div class="single_product_text">
-                        <h4>{{ $p->product_name}}</h4>
-                        <h3>{{ $p->price}}</h3>
-                        <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                    </div>
-                </div>
-            </div>
+{{--        @foreach ($products as $p)--}}
+{{--            <div class="col-lg-4 col-sm-6">--}}
+{{--                <div class="single_product_item">--}}
+{{--                    <img src="{{ $p->thumbnail }}" alt="">--}}
+{{--                                            <img src="img/product/product_1.png" alt="">--}}
+{{--                    <div class="single_product_text">--}}
+{{--                        <h4>{{ $p->product_name}}</h4>--}}
+{{--                        <h3>{{ $p->price}}</h3>--}}
+{{--                        <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-        @endforeach
+{{--        @endforeach--}}
 
 
     <div class="container">
@@ -41,24 +41,47 @@
             <div class="section_tittle text-center">
                 <h4>Sản phẩm mới nhất <span>shop</span></h4>
             </div>
-        </div>
+            <div class="row align-items-center latest_product_inner">
+                @foreach ($products as $p)
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="single_product_item">
+                            <img src="{{ $p->thumbnail }}" alt="">
 
-        <div class="row align-items-center latest_product_inner">
-            @foreach ($products as $p)
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_product_item">
-                        <img src="{{ $p->thumbnail }}" alt="">
-                        <img src="img/product/product_1.png" alt="">
-                        <div class="single_product_text">
-                            <h4>{{ $p->product_name}}</h4>
-                            <h3>{{ $p->price}}</h3>
-                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                            <div class="single_product_text">
+                                <h4>{{ $p->product_name}}</h4>
+                                <h3>{{ $p->price}}</h3>
+                                <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-            @endforeach
+                @endforeach
+            </div>
         </div>
+
+        <div class="col-lg-12">
+            <div class="section_tittle text-center">
+                <h4>Sản phẩm thấp nhất <span>shop</span></h4>
+            </div>
+            <div class="row align-items-center latest_product_inner">
+                @foreach ($category as $p)
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="single_product_item">
+                            <img src="{{ $p->thumbnail }}" alt="">
+
+                            <div class="single_product_text">
+                                <h4>{{ $p->product_name}}</h4>
+                                <h3>{{ $p->price}}</h3>
+                                <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                @endforeach
+            </div>
+        </div>
+
+
     </div>
 
 

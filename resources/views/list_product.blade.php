@@ -173,7 +173,7 @@
             </div>
 
             <div class="row align-items-center latest_product_inner">
-                @foreach ($products as $p)
+                @foreach ($category_products as $p)
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_product_item">
                         <img src="{{ asset($p->thumbnail )}}" alt="">
@@ -181,7 +181,7 @@
                         <div class="single_product_text">
                             <h4>{{ $p->product_name}}</h4>
                             <h3>{{ $p->price}}</h3>
-                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                            <a href="/detail/{{$p->id}}" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
                         </div>
                     </div>
                 </div>
