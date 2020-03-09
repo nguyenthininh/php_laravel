@@ -21,8 +21,9 @@
                                     Shop
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                    <a class="dropdown-item" href="{{url('/list')}}"> shop category</a>
-                                    <a class="dropdown-item" href="{{url('/detail')}}">product details</a>
+                                    <a class="dropdown-item" href="{{url('/list/{id}')}}"> shop category</a>
+{{--                                    <a class="dropdown-item" href="{{url('/detail/{id}')}}">product details</a>--}}
+                                    <a class="dropdown-item" href="{{url('#')}}">product details</a>
 
                                 </div>
                             </li>
