@@ -34,9 +34,10 @@ Route::get("/add-student",function (){
     return view('form_add_student');
 });
 
-Route::get("/home","demoController@homePage");
-Route::get("/list/{id}","demoController@listPage");
-Route::get("/detail/{id}","demoController@detailPage");
+Route::get("/home","demoController@home");
+Route::get("/list/{id}","demoController@listing");
+Route::get("/product/{id}","demoController@product");
+Route::get("/shopping/{id}","demoController@shopping");
 
 
 

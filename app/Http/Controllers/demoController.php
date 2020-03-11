@@ -3,31 +3,40 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
 
 class demoController extends Controller
 {
-    public function homePage(){
-        $products = Product::take(3)->orderBy('product_name','asc')->get();
-        $category = Product::take(3)->orderBy('price')->get();
-        $categorys = Product::take(3)->orderBy('price','desc')->get();//gia cao
-        return view("home",['products'=>$products,'category'=>$category,'categorys'=>$categorys]);
+    public function home(){
+        $product = Product::take(4)->orderBy('created_at','asc')->get();
+        $category = Product::take(4)->orderBy('price')->get();
+        $categorys = Product::take(4)->orderBy('price','desc')->get();//gia cao
+        return view("home",['product'=>$product,'category'=>$category,'categorys'=>$categorys]);
     }
 
-    public function listPage(){
-        $products = Product::find(1);
-//        $products = Product::take(4)->orderBy('product_name','asc')->get();
-        $category_products = Product::where("category_id",$products->category_id)->where('id',"!=",$products->id)->take(10)->get();
-        $brand_products = Product::where("brand_id",$products->brand_id)->where('id',"!=",$products->id)->take(10)->get();
-
-        return view ("list_product",['products'=>$products,'category_products'=>$category_products,
-            'brand_products'=>$brand_products]);
+    public function listing($id){
+//        $products = Product::find($id);
+//        $product = Product::where("category_id",$id)->take(9)->get();
+        $category = Category::find($id);
+        //$category->Product()->orderBy('price','desc')->take(10)->get();
+        return view("listing",['category'=>$category]);
     }
 
-    public function detailPage($id){
-////        $products = Product::where("category_id",5)->take(10)->orderBy('product_name','asc')->get();
-////        $products = Product::where("category_id",5)->take(10)->orderBy('created_at','asc')->get();
-            $products = Product::find($id);
-        return view ("product_detail",['products'=>$products]);
+    public function product($id){
+        $product = Product::find($id);//tra ve 1 object Product theo id
+        $category_products = Product::Where('category_id',$product->category_id)->Where('id','!=',$product->id)->take(4)->get();
+        $brand_products = Product::Where('brand_id',$product->brand_id)->Where('id','!=',$product->id)->take(4)->get();
+
+        return view('product',['product'=>$product,'category_product'=>$category_products,'brand_product'=>$brand_products]);
+    }
+
+
+    public function shoppingPage($id){
+        $product = Product::find($id);
+        $product->update([
+            "quantity" => $product->quantity-1
+        ]);
+        return redirect()->to("product/{$product->id}");
     }
 }

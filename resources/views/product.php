@@ -1,33 +1,30 @@
 @extends('layout')
 
 @section('title',"chi tiết sản phẩm")
-@section('detail')
+@section('product')
     <section class="feature_part padding_top">
+      @foreach($product as $p)
         <div class="container">
             <div class="row s_product_inner justify-content-between">
+
                 <div class="col-lg-7 col-xl-7">
                     <div class="product_slider_img">
                         <div id="vertical">
+
                             <div data-thumb="img/product/single-product/product_1.png">
-                                <img src="{{asset("$products->thumbnail")}}" />
+                                <img src="{{asset("$product->thumbnail")}}" />
+
                             </div>
-                            {{--                    <div data-thumb="img/product/single-product/product_1.png">--}}
-                            {{--                        <img src="img/product/single-product/product_1.png" />--}}
-                            {{--                    </div>--}}
-                            {{--                    <div data-thumb="img/product/single-product/product_1.png">--}}
-                            {{--                        <img src="img/product/single-product/product_1.png" />--}}
-                            {{--                    </div>--}}
-                            {{--                    <div data-thumb="img/product/single-product/product_1.png">--}}
-                            {{--                        <img src="img/product/single-product/product_1.png" />--}}
-                            {{--                    </div>--}}
+
+
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-5 col-xl-4">
                     <div class="s_product_text">
                         <h5>previous <span>|</span> next</h5>
-                        <h3>{{$products->product_name}}</h3>
-                        <h2>{{$products->price}}</h2>
+                        <h3>{{$product->product_name}}</h3>
+                        <h2>{{$product->price}}</h2>
                         <ul class="list">
                             <li>
                                 <a class="active" href="#">
@@ -47,13 +44,16 @@
                                 <input class="input-number" type="text" value="1" min="0" max="10">
                                 <span class="number-increment"> <i class="ti-plus"></i></span>
                             </div>
+                            <p></p>
                             <a href="#" class="btn_3">add to cart</a>
                             <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
+        @endforeach
     </section>
 
 

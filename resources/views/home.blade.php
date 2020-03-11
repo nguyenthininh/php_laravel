@@ -42,15 +42,15 @@
                 <h4>Sản phẩm mới nhất <span>shop</span></h4>
             </div>
             <div class="row align-items-center latest_product_inner">
-                @foreach ($products as $p)
+                @foreach ($product as $p)
                     <div class="col-lg-4 col-sm-6">
                         <div class="single_product_item">
-                            <img src="{{ $p->thumbnail }}" alt="">
+                            <img src="{{ asset($p->thumbnail) }}" alt="">
 
                             <div class="single_product_text">
                                 <h4>{{ $p->product_name}}</h4>
                                 <h3>{{ $p->price}}</h3>
-                                <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                <a href="{{url("/product/{$p->id}")}}" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
                             </div>
                         </div>
                     </div>
@@ -67,12 +67,12 @@
                 @foreach ($category as $p)
                     <div class="col-lg-4 col-sm-6">
                         <div class="single_product_item">
-                            <img src="{{ $p->thumbnail }}" alt="">
+                            <img src="{{ asset($p->thumbnail) }}" alt="">
 
                             <div class="single_product_text">
                                 <h4>{{ $p->product_name}}</h4>
                                 <h3>{{ $p->price}}</h3>
-                                <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                <a href="{{url("product/{$p->id}")}}" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
                             </div>
                         </div>
                     </div>
@@ -89,12 +89,12 @@
                 @foreach ($categorys as $p)
                     <div class="col-lg-4 col-sm-6">
                         <div class="single_product_item">
-                            <img src="{{ $p->thumbnail }}" alt="">
+                            <img src="{{ asset($p->thumbnail) }}" alt="">
 
                             <div class="single_product_text">
                                 <h4>{{ $p->product_name}}</h4>
                                 <h3>{{ $p->price}}</h3>
-                                <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                <a href="{{url("product/{$p->id}")}}" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
                             </div>
                         </div>
                     </div>

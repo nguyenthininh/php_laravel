@@ -173,18 +173,19 @@
             </div>
 
             <div class="row align-items-center latest_product_inner">
-                @foreach ($category_products as $p)
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_product_item">
-                        <img src="{{ asset($p->thumbnail )}}" alt="">
-{{--                        <img src="img/product/product_1.png" alt="">--}}
-                        <div class="single_product_text">
-                            <h4>{{ $p->product_name}}</h4>
-                            <h3>{{ $p->price}}</h3>
-                            <a href="/detail/{{$p->id}}" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                @foreach ($category->Products()->orderBy('price','desc')->take(10)->get() as $p)
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="single_product_item">
+                            <img src="{{ asset($p->thumbnail )}}" alt="">
+                            {{--                        <img src="img/product/product_1.png" alt="">--}}
+                            <div class="single_product_text">
+                                <h4>{{ $p->product_name}}</h4>
+                                <h3>{{ $p->price}}</h3>
+                                <a href="{{url("/product/{$p->id}")}}" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                            </div>
+
                         </div>
                     </div>
-                </div>
 
                 @endforeach
 
@@ -218,4 +219,4 @@
         </div>
     </div>
 
-    @endsection
+@endsection

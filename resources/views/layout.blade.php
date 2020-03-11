@@ -9,9 +9,7 @@
 <!-- Header part end-->
 
 <!-- banner part start-->
-
         @yield('home')
-
 
 <!-- banner part start-->
 
