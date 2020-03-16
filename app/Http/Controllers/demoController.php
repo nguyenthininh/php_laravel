@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 class demoController extends Controller
 {
     public function home(){
-        $product = Product::take(4)->orderBy('created_at','asc')->get();
-        $category = Product::take(4)->orderBy('price')->get();
-        $categorys = Product::take(4)->orderBy('price','desc')->get();//gia cao
+        $product = Product::take(6)->orderBy('created_at','asc')->get();
+        $category = Product::take(6)->orderBy('price')->get();
+        $categorys = Product::take(6)->orderBy('price','desc')->get();//gia cao
         return view("home",['product'=>$product,'category'=>$category,'categorys'=>$categorys]);
     }
 

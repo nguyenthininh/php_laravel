@@ -2,6 +2,8 @@
 @section('title',"List product")
 @section('product')
 
+
+
     <div class="row">
         <div class="col-lg-3">
             <div class="left_sidebar_area">

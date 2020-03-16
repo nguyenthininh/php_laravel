@@ -1,10 +1,10 @@
 @extends('layout')
 
 @section('title',"chi tiết sản phẩm")
-@section('product')
-    <section class="feature_part padding_top">
+@section('detail')
+
 {{--        @foreach($product as $p)--}}
-            <div class="container">
+
                 <div class="row s_product_inner justify-content-between">
 
                     <div class="col-lg-7 col-xl-7">
@@ -55,9 +55,9 @@
                     </div>
 
                 </div>
-            </div>
+
 {{--        @endforeach--}}
-    </section>
+
 
 
     <section class="product_description_area">

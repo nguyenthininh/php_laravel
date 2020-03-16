@@ -17,7 +17,7 @@
             <thead>
             <tr>
                 <th>ID</th>
-                <th>name</th>
+                <th>category_name</th>
                 <th>created at</th>
                 <th>updated at</th>
                 <th></th>

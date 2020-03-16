@@ -2,7 +2,7 @@
 @section("top_content")
     <div class="col-md-12">
         <div class="overview-wrap">
-            <h2 class="title-1">Thêm danh mục sản phẩm</h2>
+            <h2 class="title-1">Thêm danh mục thương hiệu</h2>
         </div>
     </div>
 @endsection
@@ -11,20 +11,20 @@
     <div class="col-md-6">
         <div class="main-card mb-3 card">
             <div class="card-body"><h5 class="card-title">Thêm danh mục</h5>
-                <form action="{{url("admin/category/store")}}" method="post">
+                <form action="{{url("admin/brand/store")}}" method="post">
                     @csrf
 
                     <div class="position-relative form-group">
-                        <label for="cc-name" class="">Tên danh mục</label>
-                        <input name="category_name" id="cc-name"  type="text" value="{{old("category_name")}}"
-                               class="form-control cc-name @if($errors->has("category_name"))is-invalid @endif  ">
+                        <label for="bb-name" class="">Tên danh mục</label>
+                        <input name="brand_name" id="bb-name"  type="text" value="{{old("brand_name")}}"
+                               class="form-control bb-name @if($errors->has("brand_name"))is-invalid @endif  ">
 
-{{--                        <input name="brand_name" id="cc-name"  type="text" value="{{old("brand_name")}}"--}}
-{{--                               class="form-control cc-name @if($errors->has("brand_name"))is-invalid @endif  ">--}}
+                        {{--                        <input name="brand_name" id="cc-name"  type="text" value="{{old("brand_name")}}"--}}
+                        {{--                               class="form-control cc-name @if($errors->has("brand_name"))is-invalid @endif  ">--}}
 
                         <span class="help-block field-validation-valid"></span>
-                        @if($errors->has("category_name"))
-                            <p style="color:red">{{$errors->first("category_name")}}</p>
+                        @if($errors->has("brand_name"))
+                            <p style="color:red">{{$errors->first("brand_name")}}</p>
                         @endif
 
 
