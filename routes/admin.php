@@ -9,6 +9,7 @@ Route::post("category/update/{id}","AdminController@categoryUpdate");
 //brand
 Route::get('brand',"AdminController@brand");
 Route::get('brand/create',"AdminController@brandCreate");
+Route::get('brand/edit/{id}',"AdminController@brandEdit");
 Route::post('brand/store',"AdminController@brandStore");
 
 //product
