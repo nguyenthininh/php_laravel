@@ -16,9 +16,11 @@ Route::post('brand/store',"AdminController@brandStore");
 Route::get('product',"AdminController@product");
 Route::get('product/create',"AdminController@productCreate");
 Route::post('product/store',"AdminController@productStore");
+Route::post("product/update/{id}","AdminController@productUpdate");
 
 //user
 Route::get('user',"AdminController@user");
 Route::get('user/create',"AdminController@userCreate");
 Route::post('user/store',"AdminController@userStore");
+Route::post("user/update/{id}","AdminController@userUpdate");
 
