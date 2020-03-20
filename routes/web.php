@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix ("admin")->group(function (){
+Route::prefix ("admin")->middleware("check_admin")->group(function (){
     include_once ("admin.php");
 });
 
@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Route::get("/xin-chao",function (){
     echo "chao tat ca moi nguoi";
-});
+})->middleware("auth");
 
 // chaỵ URL tren trình duyệt --> method Get
 
@@ -38,14 +38,20 @@ Route::get("/add-student",function (){
     return view('form_add_student');
 });
 
-Route::get("/home","demoController@home");
+Route::get("/","demoController@home");
 Route::get("/list/{id}","demoController@listing");
 Route::get("/product/{id}","demoController@product");
-Route::get("/shopping/{id}","demoController@shopping");
+Route::get("/shopping/{id}","demoController@shoppingPage")->middleware("auth");
+Route::get("/cart","demoController@cart")->middleware("auth");
+Route::get("/clear-cart","demoController@clearCart")->middleware("auth");
 
 
+Auth::routes();
 
+Route::get('/home', 'demoController@home')->name('home');
 
-
-
-
+Route::get("/logout",function (){
+    \Illuminate\Support\Facades\Auth::logout();
+    session()->flush();
+    return redirect()->to("/login");
+});

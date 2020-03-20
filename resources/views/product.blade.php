@@ -11,10 +11,8 @@
                         <div class="product_slider_img">
                             <div id="vertical">
 
-                                <div data-thumb="img/product/single-product/product_1.png">
+                                <div data-thumb="{{asset("$product->thumbnail")}}">
                                     <img src="{{asset("$product->thumbnail")}}" />
-
-
                                 </div>
 
 
@@ -30,10 +28,10 @@
                             <ul class="list">
                                 <li>
                                     <a class="active" href="#">
-                                        <p>Danh mục: {{$product->Category->category_name}} </p> </a>
+                                        <span>Danh mục : </span> {{$product->Category->category_name}} </a>
                                 </li>
                                 <li>
-                                    <a href="#"> <p>Thương hiệu : {{$product->Brand->brand_name}} </p></a>
+                                    <a href="#"> <span>Thương hiệu:</span> {{$product->Brand->brand_name}}</a>
                                 </li>
                             </ul>
                             <p>

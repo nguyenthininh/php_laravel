@@ -2,7 +2,7 @@
 @section("top_content")
     <div class="col-md-12">
         <div class="overview-wrap">
-            <h2 class="title-1">Danh mục sản phẩm</h2>
+            <h2 class="title-1">Danh mục brand</h2>
             <a class="au-btn au-btn-icon au-btn--blue" href="{{url('admin/brand/create')}}">
                 <i class="zmdi zmdi-plus"></i>Thêm danh mục</a>
         </div>
@@ -32,12 +32,13 @@
                         <td>{{$b->updated_at}}</td>
                         <td>
                             <div class="table-data-feature">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                    <i class="zmdi zmdi-edit"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                    <i class="zmdi zmdi-delete"></i>
-                                </button>
+                                <a href="{{url("admin/brand/edit",['id'=>$b->id])}}" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                   Edit
+                                </a>
+                                <a href="{{url("admin/brand/delete",['id'=>$b->id])}}" class="item"
+                                   data-toggle="tooltip" data-placement="top" title="Delete"> Delete
+{{--                                    <i class="zmdi zmdi-delete"></i>--}}
+                                </a>
                             </div>
                         </td>
                     </tr>

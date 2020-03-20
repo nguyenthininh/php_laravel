@@ -32,11 +32,51 @@ class demoController extends Controller
     }
 
 
-    public function shoppingPage($id){
+    public function shoppingPage($id, Request $request){
         $product = Product::find($id);
-        $product->update([
-            "quantity" => $product->quantity-1
-        ]);
-        return redirect()->to("product/{$product->id}");
+//        $product->update([
+//            "quantity" => $product->quantity-1
+//        ]);
+
+//        session(['key'=>'value']);  //truyen 1 gia trij vao session
+
+        /*
+        *cart => array product (product ->cart_qty = so luong mua)
+        */
+
+        $cart = $request->session()->get("cart");
+        if ($cart == null){
+            $cart = [];
+        }
+
+        foreach ($cart as $p){
+            if ($p->id == $product ->id){
+                $p->cart_qty = $p->cart_qty +1;
+                $p->cart_price= $product->price++;
+                session(["cart"=>$cart]);
+                return redirect()->to("/cart");
+            }
+        }
+        $product->cart_qty = 1;
+        $cart[] = $product;
+        session(["cart"=>$cart]);
+        return redirect()->to("/cart");
+
+//        return redirect()->to("product/{$product->id}");
     }
+
+    public function cart(Request $request){
+        $cart = $request->session()->get("cart");
+        if ($cart == null){
+            $cart = [];
+        }
+        return view("cart",["cart"=>$cart]);
+    }
+
+    public function clearCart(Request $request){
+        $request->session()->forget("cart");
+        return redirect()->to("/");
+    }
+
+
 }

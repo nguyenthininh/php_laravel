@@ -33,11 +33,6 @@
 </section>
 <!-- upcoming_event part start-->
 
-
-
-
-
-
 <!-- product_list start-->
 <section class="product_list section_padding">
     <div class="container">
@@ -45,6 +40,15 @@
     </div>
 </section>
 <!-- product_list part start-->
+
+
+<!--================Cart Area =================-->
+<section class="cart_area section_padding">
+    <div class="container">
+        @yield('cart')
+    </div>
+</section>
+<!--================End Cart Area =================-->
 
 
 
@@ -124,31 +128,33 @@
 
 <!-- jquery plugins here-->
 
-<script src="public/js/jquery-1.12.1.min.js"></script>
+<script src="{{asset("js/jquery-1.12.1.min.js")}}"></script>
 <!-- popper js -->
-<script src="public/js/popper.min.js"></script>
+<script src="{{asset("js/popper.min.js")}}"></script>
 <!-- bootstrap js -->
-<script src="public/js/bootstrap.min.js"></script>
+<script src="{{asset("js/bootstrap.min.js")}}"></script>
 <!-- easing js -->
-<script src="public/js/jquery.magnific-popup.js"></script>
+<script src="{{asset("js/jquery.magnific-popup.js")}}"></script>
 <!-- swiper js -->
-<script src="public/js/swiper.min.js"></script>
+<script src="{{asset("js/swiper.min.js")}}"></script>
 <!-- swiper js -->
-<script src="public/js/masonry.pkgd.js"></script>
+<script src="{{asset("js/masonry.pkgd.js")}}"></script>
 <!-- particles js -->
-<script src="public/js/owl.carousel.min.js"></script>
-<script src="public/js/jquery.nice-select.min.js"></script>
+<script src="{{asset("js/owl.carousel.min.js")}}"></script>
+<script src="{{asset("js/jquery.nice-select.min.js")}}"></script>
 <!-- slick js -->
-<script src="public/js/slick.min.js"></script>
-<script src="public/js/jquery.counterup.min.js"></script>
-<script src="public/js/waypoints.min.js"></script>
-<script src="public/js/contact.js"></script>
-<script src="public/js/jquery.ajaxchimp.min.js"></script>
-<script src="public/js/jquery.form.js"></script>
-<script src="public/js/jquery.validate.min.js"></script>
-<script src="public/js/mail-script.js"></script>
+<script src="{{asset("js/slick.min.js")}}"></script>
+<script src="{{asset("js/jquery.counterup.min.js")}}p"></script>
+<script src="{{asset("js/waypoints.min.js")}}"></script>
+<script src="{{asset("js/contact.js")}}"></script>
+<script src="{{asset("js/jquery.ajaxchimp.min.js")}}"></script>
+<script src="{{asset("js/jquery.form.js")}}"></script>
+<script src="{{asset("js/jquery.validate.min.js")}}"></script>
+<script src="{{asset("js/mail-script.js")}}"></script>
+<script src="{{asset("js/stellar.js")}}"></script>
+<script src="{{asset("js/price_rangs.js")}}"></script>
 <!-- custom js -->
-<script src="public/js/custom.js"></script>
+<script src="{{asset("js/custom.js")}}"></script>
 </body>
 
 </html>

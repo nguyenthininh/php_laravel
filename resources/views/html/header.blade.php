@@ -13,7 +13,7 @@
                     <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{url("/home")}}">Home</a>
+                                <a class="nav-link" href="{{url("/")}}">Home</a>
                             </li>
 {{--                             @foreach(\App\Category::all() as $c)--}}
 {{--                                <li><a href="{{url("/list/{$c->id}")}}">{{$c->category_name}}</a></li>--}}
@@ -43,8 +43,8 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
                                     <a class="dropdown-item" href="login.html"> login</a>
                                     <a class="dropdown-item" href="tracking.html">tracking</a>
-                                    <a class="dropdown-item" href="checkout.html">product checkout</a>
-                                    <a class="dropdown-item" href="cart.html">shopping cart</a>
+                                    <a class="dropdown-item" href="{{url("/checkout")}}">product checkout</a>
+                                    <a class="dropdown-item" href="{{url("/cart")}}">shopping cart</a>
                                     <a class="dropdown-item" href="confirmation.html">confirmation</a>
                                     <a class="dropdown-item" href="elements.html">elements</a>
                                 </div>
