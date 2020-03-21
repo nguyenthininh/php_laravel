@@ -1,31 +1,83 @@
-<section class=" banner_part section_padding" >
+
+<section class="banner_part">
     <div class="container">
-        <div class="row align-items-center justify-content-between ">
-            <div class="col-lg-6 col-md-6">
-                <div class="offer_img">
-                    <img src="{{asset("img/offer_img.png")}}" alt="">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="offer_text">
-                    <h2>Weekly Sale on
-                        60% Off All Products</h2>
-                    <div class="date_countdown">
-                        <div id="timer">
-                            <div id="days" class="date"></div>
-                            <div id="hours" class="date"></div>
-                            <div id="minutes" class="date"></div>
-                            <div id="seconds" class="date"></div>
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="banner_slider owl-carousel">
+                    <div class="single_banner_slider">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-8">
+                                <div class="banner_text">
+                                    <div class="banner_text_iner">
+                                        <h1>Wood & Cloth
+                                            Sofa</h1>
+                                        <p>Incididunt ut labore et dolore magna aliqua quis ipsum
+                                            suspendisse ultrices gravida. Risus commodo viverra</p>
+                                        <a href="#" class="btn_2">buy now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="banner_img d-none d-lg-block">
+                                <img src="{{asset("img/banner_img.png")}}" alt="">
+                            </div>
                         </div>
                     </div>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="enter email address"
-                               aria-label="Recipient's username" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <a href="#" class="input-group-text btn_2" id="basic-addon2">book now</a>
+
+                    <div class="single_banner_slider">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-8">
+                                <div class="banner_text">
+                                    <div class="banner_text_iner">
+                                        <h1>Cloth & Wood
+                                            Sofa</h1>
+                                        <p>Incididunt ut labore et dolore magna aliqua quis ipsum
+                                            suspendisse ultrices gravida. Risus commodo viverra</p>
+                                        <a href="#" class="btn_2">buy now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="banner_img d-none d-lg-block">
+                                <img src="{{asset("img/banner_img.png")}}" alt="">
+                            </div>
                         </div>
                     </div>
+                    <div class="single_banner_slider">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-8">
+                                <div class="banner_text">
+                                    <div class="banner_text_iner">
+                                        <h1>Wood & Cloth
+                                            Sofa</h1>
+                                        <p>Incididunt ut labore et dolore magna aliqua quis ipsum
+                                            suspendisse ultrices gravida. Risus commodo viverra</p>
+                                        <a href="#" class="btn_2">buy now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="banner_img d-none d-lg-block">
+                                <img src="{{asset("img/banner_img.png")}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="single_banner_slider">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-8">
+                                <div class="banner_text">
+                                    <div class="banner_text_iner">
+                                        <h1>Cloth $ Wood Sofa</h1>
+                                        <p>Incididunt ut labore et dolore magna aliqua quis ipsum
+                                            suspendisse ultrices gravida. Risus commodo viverra</p>
+                                        <a href="#" class="btn_2">buy now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="banner_img d-none d-lg-block">
+                                <img src="img/banner_img.png" alt="">
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
+                <div class="slider-counter"></div>
             </div>
         </div>
     </div>

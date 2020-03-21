@@ -44,6 +44,9 @@ Route::get("/product/{id}","demoController@product");
 Route::get("/shopping/{id}","demoController@shoppingPage")->middleware("auth");
 Route::get("/cart","demoController@cart")->middleware("auth");
 Route::get("/clear-cart","demoController@clearCart")->middleware("auth");
+Route::get("/checkout","demoController@checkout")->middleware("auth");
+Route::post("/checkout","demoController@placeOrder")->middleware("auth");
+//Route::get("/checkout","demoController@checkout-seccess")->middleware("auth");
 
 
 Auth::routes();

@@ -3,7 +3,7 @@
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="{{url('/home')}}"> <img src="{{asset("img/logo.png")}}" alt="logo"> </a>
+                    <a class="navbar-brand" href="{{url('/')}}"> <img src="{{asset("img/logo.png")}}" alt="logo"> </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
                             @endforeach
 {{--                                    <a class="dropdown-item" href="{{url("/list/{id}")}}"> shop category</a>--}}
 {{--                                    <a class="dropdown-item" href="{{url('/detail/{id}')}}">product details</a>--}}
-                                    <a class="dropdown-item" href="{{url("/product/1")}}">product details</a>
+{{--                                    <a class="dropdown-item" href="{{url("/product/1")}}">product details</a>--}}
 
                                 </div>
                             </li>
@@ -85,13 +85,4 @@
             </div>
         </div>
     </div>
-{{--    <div class="search_input" id="search_input_box">--}}
-{{--        <div class="container ">--}}
-{{--            <form class="d-flex justify-content-between search-inner">--}}
-{{--                <input type="text" class="form-control" id="search_input" placeholder="Search Here">--}}
-{{--                <button type="submit" class="btn"></button>--}}
-{{--                <span class="ti-close" id="close_search" title="Close Search"></span>--}}
-{{--            </form>--}}
-{{--        </div>--}}
-{{--    </div>--}}
 </header>

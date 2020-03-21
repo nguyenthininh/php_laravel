@@ -1,12 +1,10 @@
 @extends('layout')
-
 @section('title',"chi tiết sản phẩm")
 @section('detail')
 
 {{--        @foreach($product as $p)--}}
 
                 <div class="row s_product_inner justify-content-between">
-
                     <div class="col-lg-7 col-xl-7">
                         <div class="product_slider_img">
                             <div id="vertical">
