@@ -11,7 +11,10 @@ use Illuminate\Support\Facades\DB;
 
 class demoController extends Controller
 {
+
     public function home(){
+//        if (is_admin())
+
         $product = Product::take(4)->orderBy('created_at','asc')->get();
         $category = Product::take(7)->orderBy('price')->get();
         $categories = Product::take(4)->orderBy('price','desc')->get();//gia cao
