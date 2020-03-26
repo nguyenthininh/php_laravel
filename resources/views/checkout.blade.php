@@ -1,75 +1,52 @@
 @extends('layout');
-@section('title',"Giỏ hàng")
-@section('checkout')
+@section('title',"Thanh toán")
+@section('content')
 
-    <div class="returning_customer">
-        <div class="check_title">
-            <h2>
-                Returning Customer?
-                <a href="#">Click here to login</a>
-            </h2>
-        </div>
-        <p>
-            If you have shopped with us before, please enter your details in the
-            boxes below. If you are a new customer, please proceed to the
-            Billing & Shipping section.
-        </p>
-        <form class="row contact_form" action="#" method="post" novalidate="novalidate">
-            <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="name" name="name" value=" " />
-                <span class="placeholder" data-placeholder="Username or Email"></span>
-            </div>
-            <div class="col-md-6 form-group p_star">
-                <input type="password" class="form-control" id="password" name="password" value="" />
-                <span class="placeholder" data-placeholder="Password"></span>
-            </div>
-            <div class="col-md-12 form-group">
-                <button type="submit" value="submit" class="btn_3">
-                    log in
-                </button>
-                <div class="creat_account">
-                    <input type="checkbox" id="f-option" name="selector" />
-                    <label for="f-option">Remember me</label>
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Product Checkout</h2>
+                            <p>Home <span>-</span> Shop Single</p>
+                        </div>
+                    </div>
                 </div>
-                <a class="lost_pass" href="#">Lost your password?</a>
             </div>
-        </form>
-    </div>
-
-    <div class="cupon_area">
-        <div class="check_title">
-            <h2>
-                Have a coupon?
-                <a href="#">Click here to enter your code</a>
-            </h2>
         </div>
-        <input type="text" placeholder="Enter coupon code" />
-        <a class="tp_btn" href="#">Apply Coupon</a>
-    </div>
+    </section>
+    <!-- breadcrumb start-->
 
 
+    <section class="checkout_area padding_top">
+        <div class="container">
     <div class="billing_details">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-7">
                 <h3>Thông tin khách hàng</h3>
-                <form class="row contact_form" action="{{url("checkout")}}" method="POST" novalidate="novalidate">
-                    <div class="col-md-8 form-group p_star">
-                        <input type="text" class="form-control" id="first" name="customer_name" placeholder="Tên khách hàng *" required />
-                    </div>
-{{--                    <div class="col-md-6 form-group p_star">--}}
-{{--                        <input type="text" class="form-control" id="last" name="name" />--}}
-{{--                        <span class="placeholder" data-placeholder="Last name"></span>--}}
-{{--                    </div>--}}
-                    <div class="col-md-8 form-group p_star">
-                        <input type="text" class="form-control" name="address" placeholder="Address *" required />
-                    </div>
-                    <div class="col-md-8 form-group p_star">
-                        <input type="number" class="form-control" id="telephone" name="telephone" placeholder="Telephone *"
-                               required />
+                <form class="row contact_form" action="{{url("/checkout")}}" method="POST" novalidate="novalidate">
+                    @csrf
+                    <div class="col-md-10">
+                        <div class="col-md-12 form-group p_star">
+                            <input type="text" class="form-control" id="first" name="customer_name" placeholder="Tên khách hàng *" required />
+                        </div>
+                        <div class="col-md-12 form-group p_star">
+                            <input type="text" class="form-control" name="address" placeholder="Address *" required />
+                        </div>
+                        <div class="col-md-12 form-group p_star">
+                            <input type="number" class="form-control" id="telephone" name="telephone" placeholder="Telephone *"
+                                   required />
+                        </div>
                     </div>
 
-                    <div class="checkbox-items">
-                        <div class="payment-method"  style="margin-top:0">
+
+                    <div class=" row col-md-12" style="margin-top: 40px;">
+                        <div class="col-md-6">
+                            <p><tt>*Billing Information</tt></p>
+                        </div>
+                        <div class="col-md-5"  style="margin-top:0">
                             <div class="pm-item">
                                 <input type="radio" value="paypal" name="payment_method" id="one">
                                 <label for="one">Paypal</label>
@@ -89,92 +66,62 @@
                         </div>
                     </div>
 
-
                 </form>
             </div>
-            <div class="col-lg-4">
+
+
+            <div class="col-lg-5">
                 <div class="order_box">
                     <h2>Your Order</h2>
 
                     <ul class="list">
                         <li>
-                            <a href="#">Product
-                                <span>Total</span>
-                            </a>
+                            <span >Product</span>
+                                <span style="padding: 0 25% 0 40% ">Qty</span>
+                                <span >Total</span>
+
                         </li>
+
+                        @php $total = 0; @endphp
+                        @foreach(session('cart') as $p)
                         <li>
-                            <a href="#">Fresh Blackberry
-                                <span class="middle">x 02</span>
-                                <span class="last">$720.00</span>
+                            <a href="#">{{$p->product_name}}
+                                <span class="middle">{{$p->cart_qty}}</span>
+                                <span class="last">${{$p->price}}</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="#">Fresh Tomatoes
-                                <span class="middle">x 02</span>
-                                <span class="last">$720.00</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">Fresh Brocoli
-                                <span class="middle">x 02</span>
-                                <span class="last">$720.00</span>
-                            </a>
-                        </li>
+                            @php $total += ($p->cart_qty * $p->price) @endphp
+                        @endforeach
                     </ul>
+
+
                     <ul class="list list_2">
                         <li>
                             <a href="#">Subtotal
-                                <span>$2160.00</span>
+                                <span>${{number_format($total,2)}}</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">Shipping
-                                <span>Flat rate: $50.00</span>
+                                <span>Free</span>
                             </a>
                         </li>
 
                         <li>
                             <a href="#">Total
-                                <span>$2210.00</span>
+                                <span>${{number_format($total,2)}}</span>
                             </a>
                         </li>
                     </ul>
 
-
-
-                    <div class="payment_item">
-                        <div class="radion_btn">
-                            <input type="radio" id="f-option5" name="selector" />
-                            <label for="f-option5">Check payments</label>
-                            <div class="check"></div>
-                        </div>
-                        <p>
-                            Please send a check to Store Name, Store Street, Store Town,
-                            Store State / County, Store Postcode.
-                        </p>
-                    </div>
-                    <div class="payment_item active">
-                        <div class="radion_btn">
-                            <input type="radio" id="f-option6" name="selector" />
-                            <label for="f-option6">Paypal </label>
-                            <img src="img/product/single-product/card.jpg" alt="" />
-                            <div class="check"></div>
-                        </div>
-                        <p>
-                            Please send a check to Store Name, Store Street, Store Town,
-                            Store State / County, Store Postcode.
-                        </p>
-                    </div>
-                    <div class="creat_account">
-                        <input type="checkbox" id="f-option4" name="selector" />
-                        <label for="f-option4">I’ve read and accept the </label>
-                        <a href="#">terms & conditions*</a>
-                    </div>
-                    <a class="btn_3" href="#">Proceed to Paypal</a>
+                    <a class="btn_3" href="{{url("/checkout-success")}}">Proceed to Paypal</a>
                 </div>
             </div>
+
+
         </div>
     </div>
-
+        </div>
+    </section>
 
     @endsection

@@ -76,6 +76,8 @@ class demoController extends Controller
         if ($cart == null){
             $cart = [];
         }
+
+//        return view("cart.cartUser",["cart"=>$cart]);
         return view("cart",["cart"=>$cart]);
     }
 
@@ -85,7 +87,7 @@ class demoController extends Controller
     }
 
     public function checkout(Request $request){
-        if ($request->session()->has("cart")){
+        if (!$request->session()->has("cart")){
             return redirect()->to("/");
         }
         return view("checkout");
@@ -108,7 +110,7 @@ class demoController extends Controller
         $order = Order::create([
             'user_id'=>Auth::id(),
             'customer_name'=> $request ->get("customer_name"),
-            'shipping_address'=>$request ->get("shipping_address"),
+            'shipping_address'=>$request ->get("address"),
             'telephone'=>$request ->get("telephone"),
             'grand_total'=>$grand_total,
             'payment_method'=>$request ->get("payment_method"),
@@ -125,8 +127,12 @@ class demoController extends Controller
         }
 
         session()->forget('cart');
-        return redirect()->to("checkout-success");
+        return redirect()->to("/checkout-success");
 
+    }
+
+    public function checkoutSuccess(){
+        return view("success");
     }
 
 }

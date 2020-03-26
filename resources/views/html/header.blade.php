@@ -29,9 +29,6 @@
                             @foreach(\App\Category::all() as $c)
                                 <a class="dropdown-item" href="{{url("/list/{$c->id}")}}">{{$c->category_name}}</a>
                             @endforeach
-{{--                                    <a class="dropdown-item" href="{{url("/list/{id}")}}"> shop category</a>--}}
-{{--                                    <a class="dropdown-item" href="{{url('/detail/{id}')}}">product details</a>--}}
-{{--                                    <a class="dropdown-item" href="{{url("/product/1")}}">product details</a>--}}
 
                                 </div>
                             </li>
@@ -41,28 +38,36 @@
                                     pages
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                    <a class="dropdown-item" href="login.html"> login</a>
-                                    <a class="dropdown-item" href="tracking.html">tracking</a>
-                                    <a class="dropdown-item" href="{{url("/checkout")}}">product checkout</a>
+{{--                                    <a class="dropdown-item" href="login.html"> login</a>--}}
+{{--                                    <a class="dropdown-item" href="tracking.html">tracking</a>--}}
+                                    <a class="dropdown-item" href="#">product checkout</a>
                                     <a class="dropdown-item" href="{{url("/cart")}}">shopping cart</a>
-                                    <a class="dropdown-item" href="confirmation.html">confirmation</a>
-                                    <a class="dropdown-item" href="elements.html">elements</a>
+{{--                                    <a class="dropdown-item" href="confirmation.html">confirmation</a>--}}
+{{--                                    <a class="dropdown-item" href="elements.html">elements</a>--}}
                                 </div>
                             </li>
+{{--                            <li class="nav-item dropdown">--}}
+{{--                                <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_2"--}}
+{{--                                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                                    blog--}}
+{{--                                </a>--}}
+{{--                                <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">--}}
+{{--                                    <a class="dropdown-item" href="blog.html"> blog</a>--}}
+{{--                                    <a class="dropdown-item" href="single-blog.html">Single blog</a>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_2"
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_3"
                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    blog
+                                   My Account
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                    <a class="dropdown-item" href="blog.html"> blog</a>
-                                    <a class="dropdown-item" href="single-blog.html">Single blog</a>
+                                    <a class="dropdown-item" href="{{url("/login")}}">Login/Register</a>
+                                    <a class="dropdown-item" href="{{url("/logout")}}">Logout</a>
                                 </div>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contact</a>
-                            </li>
                         </ul>
                     </div>
                     <div class="hearer_icon d-flex">

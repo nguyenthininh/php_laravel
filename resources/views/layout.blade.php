@@ -13,41 +13,10 @@
 <!-- banner part start-->
 
 <!-- product_list part start-->
-        @yield('home')
+<section class="product-section spad">
+        @yield('content')
+</section>
 <!-- product_list part end-->
-
-
-<section class="feature_part padding_top">
-    <div class="container">
-        @yield('product')
-    </div>
-</section>
-
-<!-- product_list start-->
-<section class="product_list section_padding">
-    <div class="container">
-        @yield('detail')
-    </div>
-</section>
-<!-- product_list part start-->
-
-
-<!--================Cart Area =================-->
-<section class="cart_area section_padding">
-    <div class="container">
-        @yield('cart')
-    </div>
-</section>
-
-<!--================End Cart Area =================-->
-
-<!--================Checkout Area =================-->
-<section class="checkout_area padding_top">
-    <div class="container">
-        @yield('checkout')
-    </div>
-</section>
-<!--================End Checkout Area =================-->
 
 
 <!--::footer_part start::-->

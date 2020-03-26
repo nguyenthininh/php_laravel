@@ -1,9 +1,27 @@
 @extends('layout')
 @section('title',"chi tiết sản phẩm")
-@section('detail')
+@section('content')
 
-{{--        @foreach($product as $p)--}}
 
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Shop Single</h2>
+                            <p>Home <span>-</span> Shop Single</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+
+<section class="product_list section_padding">
+    <div class="container">
                 <div class="row s_product_inner justify-content-between">
                     <div class="col-lg-7 col-xl-7">
                         <div class="product_slider_img">
@@ -43,7 +61,7 @@
                                     <span class="number-increment"> <i class="ti-plus"></i></span>
                                 </div>
 
-                                <a href="{{url("shopping/{$product->id}")}}" class="btn_3">add to cart</a>
+                                <a href="{{url("/shopping/{$product->id}")}}" class="btn_3">add to cart</a>
                                 <p>{{$product->quantity}}</p>
 {{--                                <a href="#" class="like_us"> <i class="ti-heart"></i> </a>--}}
                             </div>
@@ -53,8 +71,6 @@
                 </div>
 
 {{--        @endforeach--}}
-
-
 
     <section class="product_description_area">
         <div class="container">
@@ -187,7 +203,7 @@
                                 <div class="review_item">
                                     <div class="media">
                                         <div class="d-flex">
-                                            <img src="img/product/single-product/review-1.png" alt="" />
+                                            <img src="{{asset("img/product/single-product/review-1.png")}}" alt="" />
                                         </div>
                                         <div class="media-body">
                                             <h4>Blake Ruiz</h4>
@@ -205,7 +221,7 @@
                                 <div class="review_item reply">
                                     <div class="media">
                                         <div class="d-flex">
-                                            <img src="img/product/single-product/review-2.png" alt="" />
+                                            <img src="{{asset("img/product/single-product/review-2.png")}}" alt="" />
                                         </div>
                                         <div class="media-body">
                                             <h4>Blake Ruiz</h4>
@@ -223,7 +239,7 @@
                                 <div class="review_item">
                                     <div class="media">
                                         <div class="d-flex">
-                                            <img src="img/product/single-product/review-3.png" alt="" />
+                                            <img src="{{asset("img/product/single-product/review-3.png")}}" alt="" />
                                         </div>
                                         <div class="media-body">
                                             <h4>Blake Ruiz</h4>
@@ -467,6 +483,9 @@
             </div>
         </div>
     </section>
+
+    </div>
+</section>
 
 
 

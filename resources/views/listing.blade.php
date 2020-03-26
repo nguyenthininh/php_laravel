@@ -1,7 +1,28 @@
 @extends('layout');
 @section('title',"List product")
-@section('product')
+@section('content')
 
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Shop Category</h2>
+                            <p>Home <span>-</span> Shop Category</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+
+    <section class="feature_part padding_top">
+        <div class="container">
     <div class="row">
         <div class="col-lg-3">
             <div class="left_sidebar_area">
@@ -173,7 +194,7 @@
             </div>
 
             <div class="row align-items-center latest_product_inner">
-                @foreach ($category->Products()->orderBy('price','desc')->take(10)->get() as $p)
+                @foreach ($category->Products()->orderBy('price','desc')->take(9)->get() as $p)
                     <div class="col-lg-4 col-sm-6">
                         <div class="single_product_item">
                             <img src="{{ asset($p->thumbnail )}}" alt="">
@@ -218,5 +239,8 @@
             </div>
         </div>
     </div>
+
+        </div>
+    </section>
 
 @endsection

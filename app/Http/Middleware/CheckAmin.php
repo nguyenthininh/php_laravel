@@ -17,7 +17,7 @@ class CheckAmin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check()){
+        if (Auth::check()){    //hàm kiểm tra xem người dùng đã đăng nhập hay chưa
             $currentUser = Auth::user();
             if ($currentUser->role == User::ADMIN){
                 return $next($request);
