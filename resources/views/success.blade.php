@@ -1,4 +1,4 @@
-@extends('layout');
+@extends('layout')
 @section('title',"check-success")
 @section('content')
 

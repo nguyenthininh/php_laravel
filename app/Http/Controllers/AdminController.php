@@ -178,7 +178,7 @@ class AdminController extends Controller
 
 
     public function productEdit($id){
-        $products = Products::find($id);
+        $products = Product::find($id);
         return view('admin.product.edit',['products'=>$products]);
     }
 
@@ -256,6 +256,24 @@ class AdminController extends Controller
         }
         return redirect()->to("admin/user");
 
+    }
+
+    public function userUpdate($id)
+    {
+        $user = User::find($id);
+
+        try {
+            if ($user->role == 0) {
+                $user->role = 1;
+                $user->save();
+            } else {
+                $user->role = 0;
+                $user->save();
+            }
+        } catch (Exception $e) {
+            return redirect()->back();
+        }
+        return redirect()->to("admin/user");
     }
 
     public function userDestroy($id){

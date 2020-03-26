@@ -1,4 +1,4 @@
-@extends('layout');
+@extends('layout')
 @section('title',"Thanh toán")
 @section('content')
 
