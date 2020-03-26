@@ -38,12 +38,10 @@
                                     pages
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-{{--                                    <a class="dropdown-item" href="login.html"> login</a>--}}
-{{--                                    <a class="dropdown-item" href="tracking.html">tracking</a>--}}
-                                    <a class="dropdown-item" href="#">product checkout</a>
                                     <a class="dropdown-item" href="{{url("/cart")}}">shopping cart</a>
-{{--                                    <a class="dropdown-item" href="confirmation.html">confirmation</a>--}}
-{{--                                    <a class="dropdown-item" href="elements.html">elements</a>--}}
+                                    <a class="dropdown-item" href="{{url("/checkout")}}">product checkout</a>
+                                    <a class="dropdown-item" href="{{url('/order-history/{id}')}}">History Purchase</a>
+
                                 </div>
                             </li>
 {{--                            <li class="nav-item dropdown">--}}

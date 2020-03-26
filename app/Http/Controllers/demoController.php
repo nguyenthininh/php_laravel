@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\OrderProduct;
 use App\Product;
 use App\Category;
 use Illuminate\Http\Request;
@@ -14,7 +15,6 @@ class demoController extends Controller
 
     public function home(){
 //        if (is_admin())
-
         $product = Product::take(4)->orderBy('created_at','asc')->get();
         $category = Product::take(7)->orderBy('price')->get();
         $categories = Product::take(4)->orderBy('price','desc')->get();//gia cao
@@ -76,9 +76,17 @@ class demoController extends Controller
         if ($cart == null){
             $cart = [];
         }
+//        $cart_total =0;
+//        foreach ($cart as $p){
+//            $cart_total +=($p->price*$p->cart_qty);
+//        }
 
-//        return view("cart.cartUser",["cart"=>$cart]);
         return view("cart",["cart"=>$cart]);
+    }
+
+
+    public function filter($c_id,$b_id){
+        $product = Product::Where('category_id',$c_id)->Where("brand_id",$b_id)->get();
     }
 
     public function clearCart(Request $request){
@@ -118,7 +126,7 @@ class demoController extends Controller
         ]);
 
         foreach ($cart as $p){
-            DB::table("order_products")->insert([
+            DB::table("orders_products")->insert([
                 'order_id'=>$order->id,
                 'product_id'=>$p->id,
                 'qty'=>$p->cart_qty,
@@ -133,6 +141,56 @@ class demoController extends Controller
 
     public function checkoutSuccess(){
         return view("success");
+    }
+
+    public function historyOrder($id){
+        $id = Auth::id();
+        $newests = Order::Where('user_id',$id)->orderBy('created_at')->get();
+//        dd($id);
+        return view('orderHistory',['newests'=>$newests]);
+
+    }
+    public function viewOrder($id)
+    {
+        $order = Order::find($id);
+        $order_product = OrderProduct::all()->where("order_id", $id);
+        return view("overViews", [
+            "order" => $order,
+            "order_product" => $order_product
+        ]);
+    }
+
+    public function addOrder($id)
+    {
+        $order = Order::find($id);
+        $order_product = OrderProduct::all()->where("order_id", $id);
+        $new_order = $order->replicate();
+        $new_order->status = Order::STATUS_PENDING;
+        $new_order->save();
+        foreach ($order_product as $p) {
+            DB::table("orders_products")->insert([
+                'order_id' => $new_order->id,
+                'product_id' => $p->product_id,
+                'qty' => $p->qty,
+                'price' => $p->price
+            ]);
+        }
+
+        return redirect()->to("/checkout-success");
+    }
+
+    public function deleteOrder($id)
+    {
+        $order = Order::find($id);
+        try {
+            if ($order->status != Order::STATUS_CANCEL) {
+                $order->status = Order::STATUS_CANCEL;
+                $order->save();
+            }
+        } catch (\Exception $e) {
+            return redirect()->back();
+        }
+        return redirect()->to("order-history/{id}");
     }
 
 }

@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-lg-7">
                 <h3>Thông tin khách hàng</h3>
-                <form class="row contact_form" action="{{url("/checkout")}}" method="POST" novalidate="novalidate">
+                <form id="checkout-form" class="row contact_form" action="{{url("/checkout")}}" method="POST" novalidate="novalidate">
                     @csrf
                     <div class="col-md-10">
                         <div class="col-md-12 form-group p_star">
@@ -114,7 +114,7 @@
                         </li>
                     </ul>
 
-                    <a class="btn_3" href="{{url("/checkout-success")}}">Proceed to Paypal</a>
+                    <a class="btn_3" onclick="document.getElementById('checkout-form').submit()">Proceed to Paypal</a>
                 </div>
             </div>
 
