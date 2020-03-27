@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CancelOrder;
 use App\Mail\OrderCreated;
 use App\Order;
 use App\OrderProduct;
@@ -137,8 +138,8 @@ class demoController extends Controller
         }
 
         session()->forget('cart');
-        Mail::to("ntninh2000@gmail.com")->send(new OrderCreated($order));
-//        Mail::to(Auth::user()->email)->send(new OrderCreated());
+//        Mail::to("ntninh2000@gmail.com")->send(new OrderCreated($order));
+        Mail::to(Auth::user()->email)->send(new OrderCreated($order));
         return redirect()->to("/checkout-success");
 
     }
@@ -180,6 +181,7 @@ class demoController extends Controller
             ]);
         }
 
+        Mail::to(Auth::user()->email)->send(new CancelOrder($order));
         return redirect()->to("/checkout-success");
     }
 
