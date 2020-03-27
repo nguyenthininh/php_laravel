@@ -137,7 +137,8 @@ class demoController extends Controller
         }
 
         session()->forget('cart');
-        Mail::to("ntninh2000@gmail.com")->send(new OrderCreated());
+        Mail::to("ntninh2000@gmail.com")->send(new OrderCreated($order));
+//        Mail::to(Auth::user()->email)->send(new OrderCreated());
         return redirect()->to("/checkout-success");
 
     }
