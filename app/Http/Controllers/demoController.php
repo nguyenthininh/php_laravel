@@ -196,6 +196,7 @@ class demoController extends Controller
         } catch (\Exception $e) {
             return redirect()->back();
         }
+        Mail::to(Auth::user()->email)->send(new CancelOrder($order));
         return redirect()->to("order-history/{id}");
     }
 
