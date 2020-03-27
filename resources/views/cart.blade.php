@@ -82,7 +82,6 @@
                             <a class="btn_1" href="{{url("/checkout")}}">Update Cart</a>
                         </div>
                     </td>
-
                 </tr>
 
                 </tbody>

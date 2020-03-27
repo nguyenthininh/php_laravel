@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderCreated;
 use App\Order;
 use App\OrderProduct;
 use App\Product;
@@ -9,6 +10,7 @@ use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class demoController extends Controller
 {
@@ -135,6 +137,7 @@ class demoController extends Controller
         }
 
         session()->forget('cart');
+        Mail::to("ntninh2000@gmail.com")->send(new OrderCreated());
         return redirect()->to("/checkout-success");
 
     }

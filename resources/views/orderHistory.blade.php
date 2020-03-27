@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('title',"Order")
 @section('content')
 
     <!-- breadcrumb start-->
@@ -20,13 +20,10 @@
     <!-- breadcrumb start-->
 
 
-    <section class="shopping-cart spad">
+    <section class="table-responsive ">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="cart-table col-lg-12">
-
-                        <table>
+            <div class="card-body">
+                        <table class="table table-bordered" style="margin-top: 30px;">
                             <thead>
                             <tr>
                                 <th class="p-name">Customer Name</th>
@@ -51,17 +48,15 @@
                                     <td class="p-price first-row">
 
                                         <form action="{{url("/viewOrder/{$p->id}")}}">
-                                            <button type="submit" class="btn btn-primary btn-md btn-block">See details</button>
+                                            <button type="submit" class="btn btn-success btn-md btn-block">See details</button>
                                         </form>
                                         <form action="{{url("/add-order/{$p->id}")}}"  novalidate="novalidate">
                                             <button type="submit" class="btn btn-warning btn-md btn-block">Repurchase</button>
                                         </form>
                                         <form action="{{url("/deleteOrder/{$p->id}")}}" method="get">
-                                            <button type="submit" class="btn btn-light btn-md btn-block">Not buy</button>
+                                            <button type="submit" class="btn btn-danger btn-md btn-block">Not buy</button>
                                         </form>
                                     </td>
-
-
                                 </tr>
 
                                 </tbody>
@@ -71,19 +66,17 @@
                         </table>
 
                     </div>
+
                     <div class="row">
-
                         <div class="col-lg-4 offset-lg-4">
-                            <div class="proceed-checkout">
+                            <div class="cupon_text" style="margin-top: 60px;">
 
-                                <a href="{{url("/")}}" class="proceed-btn">Continue Shopping</a>
+                                <a class="btn_1" href="{{url("/")}}" class="proceed-btn">Continue Shopping</a>
                             </div>
                         </div>
                     </div>
 
                 </div>
-            </div>
-        </div>
     </section>
 
     @endsection
