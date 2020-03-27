@@ -7,7 +7,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="menu_icon"><i class="fas fa-bars"></i></span>
+                        <span class="menu_icon"><i> <img width="35px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" alt=""> </i></span>
                     </button>
 
                     <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
@@ -72,9 +72,12 @@
                         <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
                         <a href=""><i class="ti-heart"></i></a>
                         <div class="dropdown cart">
-                            <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-cart-plus"></i>
+                            <a href="{{url("/cart")}}">
+                                <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i><img  src="https://img.icons8.com/material/24/000000/shopping-cart--v1.png"/>
+                                    </i>
+                                </a>
                             </a>
                             <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <div class="single_product">

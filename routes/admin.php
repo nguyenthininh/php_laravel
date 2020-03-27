@@ -16,7 +16,7 @@ Route::post('brand/store',"AdminController@brandStore");
 //product
 Route::get('product',"AdminController@product");
 Route::get('product/create',"AdminController@productCreate");
-//Route::get('product/edit/{id}',"AdminController@productEdit");
+Route::get('product/edit/{id}',"AdminController@productEdit");
 Route::post('product/store',"AdminController@productStore");
 Route::post("product/update/{id}","AdminController@productUpdate");
 

@@ -150,16 +150,17 @@ class AdminController extends Controller
 
     public function productStore(Request $request){
         $request->validate([
-            "product_name"=> "required",
-            "product_desc"=>"required",
-            "thumbnail"=>"required",
-            "gallery"=>"required",
-            "category_id"=>"required",
-            "brand_id"=>"required",
-            "price"=>"required",
+            "product_name"=> "required|string|unique:products",
+            "product_desc"=>"required|string",
+            "thumbnail"=>"required|string",
+            "gallery"=>"required|string",
+            "category_id"=>"required|numeric",
+            "brand_id"=>"required|numeric",
+            "price"=>"required|numeric",
+            "quantity" => "required|numeric"
         ]);
         try{
-            Products::create([
+            Product::create([
                 "product_name"=> $request->get("product_name"),
                 "product_desc"=> $request->get("product_desc"),
                 "thumbnail"=> $request->get("thumbnail"),
@@ -171,6 +172,7 @@ class AdminController extends Controller
 
             ]);
         }catch(\Exception $e){
+            dd($e);
             return redirect()->back();
         }
         return redirect()->to("admin/product");
@@ -184,20 +186,20 @@ class AdminController extends Controller
 
 
     public function productUpdate($id,Request $request){
-        $product = Product::find($id);
+        $products = Product::find($id);
         $request->validate([ // truyen vao rules de validate
-            "product_name"=> "required|string|max:255|unique:product,product_name,".$id, // validation laravel
-            "product_desc"=> "required|string|max:255:product,product_desc,".$id,
-            "thumbnail"=> "required|string|max:255:product,thumbnail,".$id,
-            "gallery"=> "required|string|max:255:product,gallery,".$id,
-            "category_id"=> "required|product,category_id,".$id,
-            "brand_id"=> "required|product,brand_id,".$id,
-            "price"=> "required|Float:product,price,".$id,
-            "quantity"=> "required|string|",
+            "product_name"=> "required|string|unique:product,product_name,".$id, // validation laravel
+            "product_desc"=> "required|string",
+            "thumbnail"=> "required|string",
+            "gallery"=> "required|string",
+            "category_id"=> "required|integer",
+            "brand_id"=> "required|integer",
+            "price"=> "required|numeric",
+            "quantity"=> "required|integer",
         ]);
 
         try {
-            Product::create([
+            $products->update([
                 "product_name"=>$request->get("product_name"),
                 "product_desc"=>$request->get("product_desc"),
                 "thumbnail"=>$request->get("thumbnail"),
@@ -217,9 +219,9 @@ class AdminController extends Controller
     }
 
     public function productDestroy($id){
-        $product = Product::find($id);
+        $products = Product::find($id);
         try {
-            $product->delete(); // xoa cung // CRUD
+            $products->delete(); // xoa cung // CRUD
             // xoa mem
             // them 1 truong status : 0: Inactive; 1: active
             // chuyen status tu 1 -> 0
